@@ -48,12 +48,21 @@
       const total = parseFloat(document.getElementById('totalAmount').value);
       const people = parseInt(document.getElementById('totalPeople').value)
 
-      // 両方に数字が入っている時だけ計算する
-      if (total && people) {
+      // 計算結果を変数に代入
+      // 一人当たりの金額表示
+      const perPersonEl = document.getElementById('perPerson');
+      // 端数の説明文表示
+      const fractionsEl = document.getElementById('fractions');
+      // コピーボタン
+      const copyBtn = document.getElementById('copyBtn');
+
+
+      // 両方に正数が入っている時だけ計算する
+      if (total > 0 && people >0) {
         // 一人当たりの金額を出し、100円単位で切り捨てる（Math.floor）
         const baseAmount = Math.floor((total / people) / 100) * 100;
 
-        // 端数（切り捨てた分）を幹事が引き受ける計算
+        // 端数（切り捨てた分）を一名が引き受ける計算
         const managerAmount = total - (baseAmount * (people - 1));
 
         // 計算結果を画面に反映させる
