@@ -25,5 +25,28 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function calculate() {
+      //  画面から入力された文字を取得し数字に変換する
+      const total = parseFloat(document.getElementById('totalAmount').value);
+      const people = parseInt(document.getElementById('totalPeople').value)
+
+      // 両方に数字が入っている時だけ計算する
+      if (total && people) {
+        // 一人当たりの金額を出し、100円単位で切り捨てる（Math.floor）
+        const baseAmount = Math.floor((total / people) / 100) * 100;
+
+        // 端数（切り捨てた分）を幹事が引き受ける計算
+        const managerAmount = total - (baseAmount * (people - 1));
+
+        // 計算結果を画面に反映させる
+        document.getElementById('resultArea').style.display = 'block'; //エリア表示
+        document.getElementById('perPerson').innerText = baseAmount.toLocaleString() + " 円";
+        document.getElementById('fractions').innerText = "※端数調整により、幹事一名のみ" + managerAmount.toLocaleString() + "　円";
+
+      }
+    }
+  </script>
 </body>
 </html>
