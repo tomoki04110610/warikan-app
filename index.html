@@ -8,6 +8,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <div class="container mt-5">
+    <div class="card shadow-sm p-4" style="max-width: 500px; margin: auto;">
+      <h2 class="text-center mb-4">割り勘</h2>
+
+      <!-- 合計金額入力 -->
+      <div class="mb-3">
+        <label class="form-label">合計金額　（円）</label>
+        <input type="number" id="totalAmount" class="form-control form-control-lg" placeholder="12500" oninput="calculate()">
+      </div>
+
+      <!-- 人数入力 -->
+      <div class="mb-3">
+        <label class="form-label">人数　（人）</label>
+        <input type="number" id="totalPeople" class="form-control form-control-lg" placeholder="4" oninput="calculate()">
+      </div>
+    </div>
+  </div>
 </body>
 </html>
