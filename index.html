@@ -72,6 +72,19 @@
 
       }
     }
+
+    // コピー機能
+    function copyToClipboard() {
+      // 出力された内容を読み取る
+      const total = document.getElementById('totalAmount').value;
+      const perPerson = document.getElementById('perPerson').innerText;
+      const fractions = document.getElementById('fractions').innerText;
+
+      const text = `【割り勘精算】\n合計：${total} 円\n一人あたり：${perPerson}\n${fractions}\nよろしくお願いします！`;
+      navigator.clipboard.writeText(text).then(() => {
+      alert("コピーしました！");
+      });
+    }
   </script>
 </body>
 </html>
