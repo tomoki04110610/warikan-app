@@ -23,6 +23,22 @@
         <label class="form-label">人数　（人）</label>
         <input type="number" id="totalPeople" class="form-control form-control-lg" placeholder="4" oninput="calculate()">
       </div>
+
+      <!-- 計算結果表示エリア -->
+      <div id="resultArea" class="mt-4 p-3 bg-light rounded" style="display: none;">
+        <div class="h5 mb-2 text-secondary">一人あたり</div>
+
+        <!-- 金額表示 -->
+        <div id="perPerson" class="display-6 text-primary fw-bold">0 円</div>
+
+        <!-- 端数表示 -->
+        <div id="fractions" class="small text-muted mt-2"></div>
+
+        <!-- 共有用テキスト表示 -->
+        <button class="btn btn-success w-100 mt-3 fw-bold" onclick="copyToClipboard()">
+          結果をコピーして共有しよう
+        </button>
+      </div>
     </div>
   </div>
 
