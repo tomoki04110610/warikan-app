@@ -25,7 +25,7 @@
       </div>
 
       <!-- 計算結果表示エリア -->
-      <div id="resultArea" class="mt-4 p-3 bg-light rounded" style="display: none;">
+      <div id="resultArea" class="mt-4 p-3 bg-light rounded">
         <div class="h5 mb-2 text-secondary">一人あたり</div>
 
         <!-- 金額表示 -->
@@ -59,7 +59,7 @@
         // 計算結果を画面に反映させる
         document.getElementById('resultArea').style.display = 'block'; //エリア表示
         document.getElementById('perPerson').innerText = baseAmount.toLocaleString() + " 円";
-        document.getElementById('fractions').innerText = "※端数調整により、幹事一名のみ" + managerAmount.toLocaleString() + "　円";
+        document.getElementById('fractions').innerText = "※端数調整により、一名のみ" + managerAmount.toLocaleString() + "　円";
 
       }
     }
